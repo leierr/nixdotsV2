@@ -5,7 +5,7 @@
     ./system_packages.nix
     ../../modules/nixos/main_user
     ../../modules/nixos/sudoers
-    ../../modules/nixos/boot
+    ../../modules/nixos/systemdboot
     ../../modules/nixos/fonts
     ../../modules/nixos/locale-timedate
     ../../modules/nixos/network
