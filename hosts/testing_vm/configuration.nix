@@ -1,4 +1,4 @@
-{ pkgs, lib, nixpkgs_unstable, ... }:
+{ pkgs, lib, pkgs-unstable, ... }:
 {
   imports = [
     ./hardware-configuration.nix
@@ -20,7 +20,7 @@
   # sudo module settings
   sudo_module.wheelNeedsPassword = false;
 
-  environment.systemPackages = with pkgs; [bash-completion dig neofetch git] ++ (with nixpkgs_unstable; [
+  environment.systemPackages = with pkgs; [bash-completion dig neofetch git] ++ (with pkgs-unstable; [
     opentofu
   ]);
 
