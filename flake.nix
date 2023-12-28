@@ -10,17 +10,9 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixpkgs_unstable, ... }@inputs:
+  outputs = { self, nixpkgs, ... }@inputs:
   let
     system = "x86_64-linux";
-    pkgs = nixpkgs {
-      inherit system;
-      config.allowUnfree = true;
-    };
-    pkgs_unstable = nixpkgs_unstable {
-      inherit system;
-      config.allowUnfree = true;
-    };
   in
   {
     nixosConfigurations = {
