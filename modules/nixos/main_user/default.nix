@@ -30,14 +30,14 @@ in
   config = {
     users.users.${cfg.name} = {
       isNormalUser = true;
-      shell = ${cfg.shell};
+      shell = cfg.shell;
       home = "/home/${cfg.name}";
       homeMode = "0700";
       createHome = true;
       initialPassword = "1234";
-      group = ${cfg.name};
-      extraGroups = ${cfg.secondaryGroups};
-      description = ${cfg.description};
+      group = cfg.name;
+      extraGroups = cfg.secondaryGroups;
+      description = cfg.description;
       packages = [];
     };
   };
