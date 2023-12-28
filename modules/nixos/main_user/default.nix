@@ -28,6 +28,9 @@ in
   };
 
   config = {
+    # create user group until https://github.com/NixOS/nixpkgs/issues/198296 is implemented.
+    users.extraGroups.${cfg.name}.name = cfg.name;
+
     users.users.${cfg.name} = {
       isNormalUser = true;
       shell = cfg.shell;
