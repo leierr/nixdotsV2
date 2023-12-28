@@ -25,6 +25,7 @@
   {
     nixosConfigurations = {
       extraSpecialArgs = { inherit inputs; inherit pkgs-unstable; };
+      specialArgs = pkgs-unstable;
 
       desktop = nixpkgs.lib.nixosSystem {
         inherit system;
@@ -49,7 +50,6 @@
 
       testing_vm = nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = pkgs-unstable;
         modules = [
           ./hosts/testing_vm/configuration.nix
         ];
