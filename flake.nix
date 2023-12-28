@@ -25,7 +25,7 @@
   {
     nixosConfigurations = {
       inherit system;
-      specialArgs = { inherit inputs; };
+      extraSpecialArgs = { inherit inputs; };
 
       desktop = nixpkgs.lib.nixosSystem {
         inherit system;
