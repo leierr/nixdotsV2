@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, ... }:
 {
   # mlocate
   services.locate = {
@@ -22,8 +22,4 @@
     pinentryFlavor = "gnome3";
     enableSSHSupport = false;
   };
-
-  environment.systemPackages = with pkgs; [bash-completion dig neofetch git] ++ (with inputs.pkgs_unstable; [
-    opentofu
-  ]);
 }

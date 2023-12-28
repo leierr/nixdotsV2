@@ -20,6 +20,10 @@
   # sudo module settings
   sudo_module.wheelNeedsPassword = false;
 
+  environment.systemPackages = with pkgs; [bash-completion dig neofetch git] ++ (with inputs.pkgs_unstable; [
+    opentofu
+  ]);
+
   # nixos version
   system.stateVersion = "23.11";
 }
