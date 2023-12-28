@@ -51,7 +51,7 @@
 
       testing_vm = nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = inputs;
+        specialArgs = pkgs_unstable;
         modules = [
           ./hosts/testing_vm/configuration.nix
         ];
