@@ -20,7 +20,7 @@
   # sudo module settings
   sudo_module.wheelNeedsPassword = false;
 
-  environment.systemPackages = with pkgs; [bash-completion dig neofetch git] ++ (with pkgs_unstable; [
+  environment.systemPackages = with pkgs; [bash-completion dig neofetch git] ++ (with nixpkgs_unstable; [
     opentofu
   ]);
 
