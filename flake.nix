@@ -10,7 +10,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs_unstable, ... }@inputs:
   let
     system = "x86_64-linux";
     pkgs = nixpkgs {
