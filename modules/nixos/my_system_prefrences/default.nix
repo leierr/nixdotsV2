@@ -15,4 +15,8 @@
       #access-tokens = "";
     };
   };
+
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-25"
+  ];
 }

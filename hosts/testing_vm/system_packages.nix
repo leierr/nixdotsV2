@@ -25,6 +25,6 @@
 
   environment.systemPackages = with pkgs; [bash-completion dig neofetch git] ++ (with pkgs-unstable; [
     opentofu
-    obsidian.override { electron = pkgs.electron_26; }
+    obsidian
   ]);
 }
