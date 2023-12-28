@@ -25,29 +25,29 @@
   {
     nixosConfigurations = {
 
-      desktop = pkgs.lib.nixosSystem {
-        extraSpecialArgs = { inherit inputs; };
+      desktop = nixpkgs.lib.nixosSystem {
+        specialArgs = inputs;
         modules = [
           ./hosts/desktop/configuration.nix
         ];
       };
 
-      laptop = pkgs.lib.nixosSystem {
-        extraSpecialArgs = { inherit inputs; };
+      laptop = nixpkgs.lib.nixosSystem {
+        specialArgs = inputs;
         modules = [
           ./hosts/laptop/configuration.nix
         ];
       };
 
-      workmachine = pkgs.lib.nixosSystem {
-        extraSpecialArgs = { inherit inputs; };
+      workmachine = nixpkgs.lib.nixosSystem {
+        specialArgs = inputs;
         modules = [
           ./hosts/workmachine/configuration.nix
         ];
       };
 
-      testing_vm = pkgs.lib.nixosSystem {
-        extraSpecialArgs = { inherit inputs; };
+      testing_vm = nixpkgs.lib.nixosSystem {
+        specialArgs = inputs;
         modules = [
           ./hosts/testing_vm/configuration.nix
         ];
