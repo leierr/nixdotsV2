@@ -13,16 +13,19 @@
   outputs = { self, nixpkgs, nixpkgs-unstable, ... }@inputs:
   let
     system = "x86_64-linux";
-    pkgs = import nixpkgs {
-      inherit system;
+    nixpkgs-config = {
       config = {
         allowUnfree = true;
         permittedInsecurePackages = [ "electron-25.9.0" ];
       };
     };
+    pkgs = import nixpkgs {
+      inherit system;
+      config = nixpkgs-config;
+    };
     pkgs-unstable = import nixpkgs-unstable {
       inherit system;
-      inherit (pkgs.config);
+      config = nixpkgs-config;
     };
   in
   {
