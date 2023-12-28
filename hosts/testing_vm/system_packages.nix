@@ -23,7 +23,7 @@
     enableSSHSupport = false;
   };
 
-  environment.systemPackages = with pkgs; [bash-completion dig neofetch git] ++ (with nixpkgs-unstable.legacyPackages.${system}; [
+  environment.systemPackages = with pkgs; [bash-completion dig neofetch hello-unfree git] ++ (with nixpkgs-unstable.legacyPackages.${pkgs.system}; [
     opentofu
     obsidian
   ]);

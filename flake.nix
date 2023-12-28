@@ -35,6 +35,10 @@
 
       workmachine = nixpkgs.lib.nixosSystem {
         inherit system;
+        config = {
+          allowUnfree = true;
+          permittedInsecurePackages = [ "electron-25.9.0" ];
+        };
         specialArgs = inputs;
         modules = [
           ./hosts/workmachine/configuration.nix
