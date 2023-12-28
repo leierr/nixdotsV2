@@ -24,7 +24,7 @@
   in
   {
     nixosConfigurations = {
-      specialArgs = { inherit pkgs-unstable; };
+      extraSpecialArgs = { inherit pkgs-unstable; };
 
       desktop = nixpkgs.lib.nixosSystem {
         inherit system;
