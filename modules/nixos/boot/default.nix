@@ -1,11 +1,12 @@
 {
-  boot.loader.grub.enable = false;
   boot = {
     loader = {
       systemd-boot = {
         enable = true;
         editor = true;
       };
+
+      grub.enable = false;
 
       efi.canTouchEfiVariables = true;
       timeout = 3;
