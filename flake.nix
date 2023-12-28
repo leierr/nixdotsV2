@@ -24,7 +24,6 @@
   in
   {
     nixosConfigurations = {
-      extraSpecialArgs = { inherit inputs; };
 
       desktop = nixpkgs.lib.nixosSystem {
         inherit system;
@@ -52,6 +51,7 @@
 
       testing_vm = nixpkgs.lib.nixosSystem {
         inherit system;
+        specialArgs = inputs;
         modules = [
           ./hosts/testing_vm/configuration.nix
         ];
