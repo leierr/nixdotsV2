@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, imports, ... }:
 {
   # mlocate
   services.locate = {
