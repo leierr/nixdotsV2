@@ -22,7 +22,7 @@
     };
     pkgs-unstable = import nixpkgs-unstable {
       inherit system;
-      config = nixpkgs.config;
+      config = pkgs.config;
     };
   in
   {
