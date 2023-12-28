@@ -1,4 +1,4 @@
-{ pkgs, imports, ... }:
+{ pkgs, inputs, ... }:
 {
   # mlocate
   services.locate = {
@@ -23,7 +23,7 @@
     enableSSHSupport = false;
   };
 
-  environment.systemPackages = with pkgs; [bash-completion dig neofetch git] ++ (with imports.pkgs_unstable; [
+  environment.systemPackages = with pkgs; [bash-completion dig neofetch git] ++ (with inputs.pkgs_unstable; [
     opentofu
   ]);
 }
