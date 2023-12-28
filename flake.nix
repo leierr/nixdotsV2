@@ -13,11 +13,11 @@
   outputs = { self, nixpkgs, nixpkgs_unstable, ... }@inputs:
   let
     system = "x86_64-linux";
-    pkgs = import nixpkgs {
+    pkgs = nixpkgs {
       inherit system;
       config.allowUnfree = true;
     };
-    pkgs_unstable = import nixpkgs_unstable {
+    pkgs_unstable = nixpkgs_unstable {
       inherit system;
       config.allowUnfree = true;
     };
