@@ -25,11 +25,11 @@
   {
     nixosConfigurations = {
       inherit system;
-      specialArgs = inputs;
+      specialArgs = { inherit inputs; };
 
       desktop = nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = { inherit inputs; };
+        specialArgs = inputs;
         modules = [
           ./hosts/desktop/configuration.nix
         ];
