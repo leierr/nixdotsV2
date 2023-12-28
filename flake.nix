@@ -10,7 +10,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixpkgs_unstable, ... }@inputs:
+  outputs = { self, nixpkgs, ... }@inputs:
   let
     system = "x86_64-linux";
     pkgs = nixpkgs {
@@ -51,7 +51,7 @@
 
       testing_vm = nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = pkgs_unstable;
+        specialArgs = inputs;
         modules = [
           ./hosts/testing_vm/configuration.nix
         ];
