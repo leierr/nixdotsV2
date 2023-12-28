@@ -24,30 +24,30 @@
   in
   {
     nixosConfigurations = {
-      extraSpecialArgs = { inherit inputs; };
+      extraSpecialArgs = { inherit inputs; inherit pkgs-unstable; };
 
-      desktop = nixpkgs.lib.nixosSystem {
+      desktop = pkgs.lib.nixosSystem {
         inherit system;
         modules = [
           ./hosts/desktop/configuration.nix
         ];
       };
 
-      laptop = nixpkgs.lib.nixosSystem {
+      laptop = pkgs.lib.nixosSystem {
         inherit system;
         modules = [
           ./hosts/laptop/configuration.nix
         ];
       };
 
-      workmachine = nixpkgs.lib.nixosSystem {
+      workmachine = pkgs.lib.nixosSystem {
         inherit system;
         modules = [
           ./hosts/workmachine/configuration.nix
         ];
       };
 
-      testing_vm = nixpkgs.lib.nixosSystem {
+      testing_vm = pkgs.lib.nixosSystem {
         inherit system;
         modules = [
           ./hosts/testing_vm/configuration.nix
