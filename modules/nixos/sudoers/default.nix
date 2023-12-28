@@ -15,6 +15,6 @@ in
   config = {
     security.doas.enable = false;
     security.sudo.enable = true;
-    security.sudo.wheelNeedsPassword = ${cfg.wheelNeedsPassword};
+    security.sudo.wheelNeedsPassword = cfg.wheelNeedsPassword;
   };
 }
