@@ -51,7 +51,7 @@
 
       testing_vm = nixpkgs.lib.nixosSystem {
         inherit system;
-        extraSpecialArgs = { inherit inputs; };
+        specialArgs = inputs;
         modules = [
           ./hosts/testing_vm/configuration.nix
         ];
