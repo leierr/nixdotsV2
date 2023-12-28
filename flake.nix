@@ -10,27 +10,16 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, ... }@inputs:
+  outputs = { self, nixpkgs, ... }@inputs:
   let
     system = "x86_64-linux";
-    pkgs = import nixpkgs {
-      inherit system;
-      config = {
-        allowUnfree = true;
-        permittedInsecurePackages = [ "electron-25.9.0" ];
-      };
-    };
-    pkgs-unstable = import nixpkgs-unstable {
-      inherit system;
-      config = pkgs.config;
-    };
   in
   {
     nixosConfigurations = {
 
       desktop = nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = { inherit pkgs-unstable inputs; };
+        specialArgs = inputs;
         modules = [
           ./hosts/desktop/configuration.nix
         ];
@@ -38,7 +27,7 @@
 
       laptop = nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = { inherit pkgs-unstable inputs; };
+        specialArgs = inputs;
         modules = [
           ./hosts/laptop/configuration.nix
         ];
@@ -46,7 +35,7 @@
 
       workmachine = nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = { inherit pkgs-unstable inputs; };
+        specialArgs = inputs;
         modules = [
           ./hosts/workmachine/configuration.nix
         ];
@@ -54,7 +43,7 @@
 
       testing_vm = nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = { inherit pkgs-unstable inputs; };
+        specialArgs = inputs;
         modules = [
           ./hosts/testing_vm/configuration.nix
         ];
