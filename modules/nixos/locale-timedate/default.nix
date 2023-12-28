@@ -1,4 +1,7 @@
 {
+  # Configure console keymap
+  console.keyMap = "no";
+
   #timezone
   time.timeZone = "Europe/Oslo";
 

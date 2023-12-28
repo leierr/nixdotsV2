@@ -35,7 +35,7 @@ in
       isNormalUser = true;
       shell = cfg.shell;
       home = "/home/${cfg.name}";
-      homeMode = "0700";
+      homeMode = "0770";
       createHome = true;
       initialPassword = "1234";
       group = cfg.name;

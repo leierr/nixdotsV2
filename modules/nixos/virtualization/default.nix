@@ -12,6 +12,7 @@
 
   # docker
   virtualisation.docker.enable = true;
+  virtualisation.docker.enableOnBoot = false;
   
   # virt manager + docker-compose
   environment.systemPackages = with pkgs; [ virt-manager docker-compose ];

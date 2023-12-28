@@ -8,5 +8,22 @@
     interval = "hourly";
   };
 
-  
+  # editor
+  programs.neovim = {
+    enable = true;
+    viAlias = true;
+    vimAlias = true;
+  };
+
+  # GPG
+  services.pcscd.enable = true;
+  programs.gnupg.agent = {
+    enable = true;
+    pinentryFlavor = "gnome3";
+    enableSSHSupport = false;
+  };
+
+  environment.systemPackages = with pkgs; [bash-completion dig neofetch git] ++ (with imports.pkgs_unstable; [
+    opentofu
+  ]);
 }
