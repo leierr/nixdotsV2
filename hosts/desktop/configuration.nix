@@ -21,10 +21,6 @@
   # sudo module settings
   sudo_module.wheelNeedsPassword = false;
 
-  # boot module settings
-  boot_module_settings.amdcpu = true;
-  boot_module_settings.amdgpu = true;
-
   # nixos version
   system.stateVersion = "23.11";
 }
