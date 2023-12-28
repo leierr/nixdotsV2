@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   # daemon that allows programs to request priority without going directly to the kernel
   security.rtkit.enable = true;
@@ -17,6 +18,6 @@
   };
 
   nixpkgs.config.permittedInsecurePackages = [
-    "electron-25"
+    pkgs.electron_25
   ];
 }
