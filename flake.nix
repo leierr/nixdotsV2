@@ -21,11 +21,11 @@
     };
     pkgs = import nixpkgs {
       inherit system;
-      config = ${nixpkgs-config};
+      config = (nixpkgs-config);
     };
     pkgs-unstable = import nixpkgs-unstable {
       inherit system;
-      config = ${nixpkgs-config};
+      config = (nixpkgs-config);
     };
   in
   {
