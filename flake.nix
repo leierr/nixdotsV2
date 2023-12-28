@@ -46,6 +46,13 @@
         ];
       };
 
+      testing_vm = pkgs.lib.nixosSystem {
+        extraSpecialArgs = { inherit inputs; };
+        modules = [
+          ./hosts/testing_vm/configuration.nix
+        ];
+      };
+
     }
   };
 }
