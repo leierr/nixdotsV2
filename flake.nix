@@ -29,7 +29,7 @@
 
       desktop = nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = inputs;
+        specialArgs = { inherit inputs; };
         modules = [
           ./hosts/desktop/configuration.nix
         ];
