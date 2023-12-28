@@ -1,4 +1,4 @@
-{ pkgs, lib, pkgs-unstable, ... }:
+{ pkgs, lib, ... }:
 {
   imports = [
     ./hardware-configuration.nix
@@ -19,10 +19,6 @@
 
   # sudo module settings
   sudo_module.wheelNeedsPassword = false;
-
-  environment.systemPackages = with pkgs; [bash-completion dig neofetch git] ++ (with pkgs-unstable; [
-    opentofu
-  ]);
 
   # nixos version
   system.stateVersion = "23.11";

@@ -24,10 +24,10 @@
   in
   {
     nixosConfigurations = {
-      extraSpecialArgs = { inherit pkgs-unstable; };
 
       desktop = nixpkgs.lib.nixosSystem {
         inherit system;
+        specialArgs = { inherit pkgs-unstable inputs; };
         modules = [
           ./hosts/desktop/configuration.nix
         ];
@@ -35,6 +35,7 @@
 
       laptop = nixpkgs.lib.nixosSystem {
         inherit system;
+        specialArgs = { inherit pkgs-unstable inputs; };
         modules = [
           ./hosts/laptop/configuration.nix
         ];
@@ -42,6 +43,7 @@
 
       workmachine = nixpkgs.lib.nixosSystem {
         inherit system;
+        specialArgs = { inherit pkgs-unstable inputs; };
         modules = [
           ./hosts/workmachine/configuration.nix
         ];
@@ -49,6 +51,7 @@
 
       testing_vm = nixpkgs.lib.nixosSystem {
         inherit system;
+        specialArgs = { inherit pkgs-unstable inputs; };
         modules = [
           ./hosts/testing_vm/configuration.nix
         ];
