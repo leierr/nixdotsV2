@@ -22,10 +22,7 @@
     };
     pkgs-unstable = import nixpkgs-unstable {
       inherit system;
-      config = {
-        allowUnfree = true;
-        permittedInsecurePackages = [ "electron-25.9.0" ];
-      };
+      config = nixpkgs.config;
     };
   in
   {
