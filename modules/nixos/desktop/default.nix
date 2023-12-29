@@ -19,7 +19,6 @@ in
 
     defaultSession = mkOption {
       type = types.singleLineStr;
-      default = "";
     };
 
     displayManager = mkOption {
