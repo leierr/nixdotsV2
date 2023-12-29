@@ -9,12 +9,12 @@ in
   options.desktop_module = {
     bspwm = mkOption {
       type = types.bool;
-      default = false;
+      default = true;
     };
 
     awesomewm = mkOption {
       type = types.bool;
-      default = false;
+      default = true;
     };
 
     defaultSession = mkOption {
@@ -23,7 +23,7 @@ in
 
     displayManager = mkOption {
       type = types.singleLineStr;
-      default = "";
+      default = "gdm";
     };
 
   };
