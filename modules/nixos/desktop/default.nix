@@ -43,7 +43,7 @@ in
           enable = true;
           autoSuspend = false;
         };
-        lightdm.greeter.enable = false;
+        lightdm.enable = false;
       };
     };
   };
