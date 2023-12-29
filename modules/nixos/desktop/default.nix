@@ -29,8 +29,8 @@ in
       enable = true;
 
       windowManager = {
-        bspwm = mkIf cfg.bspwm { enable = true; package = pkgs.bspwm };
-        awesome = mkIf cfg.awesomewm { enable = true; package = pkgs.unstable.awesome };
+        bspwm = mkIf cfg.bspwm { enable = true; package = pkgs.bspwm; };
+        awesome = mkIf cfg.awesomewm { enable = true; package = pkgs.unstable.awesome; };
       };
 
       displayManager = {
