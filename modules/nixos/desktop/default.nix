@@ -38,7 +38,7 @@ in
       };
 
       displayManager = {
-        if (cfg.defaultSession != null) then defaultSession = cfg.defaultSession; # "none+bspwm"
+        mkIf (cfg.defaultSession != null) defaultSession = cfg.defaultSession; # "none+bspwm"
         gdm = mkIf (cfg.displayManager == "gdm") {
           enable = true;
           autoSuspend = false;
