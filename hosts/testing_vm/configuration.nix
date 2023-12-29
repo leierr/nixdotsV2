@@ -12,6 +12,7 @@
     ../../modules/nixos/sound
     ../../modules/nixos/common_settings
     ../../modules/nixos/virtualization
+    ../../modules/nixos/desktop
   ];
 
   # primary user settings
@@ -19,6 +20,11 @@
 
   # sudo module settings
   sudo_module.wheelNeedsPassword = false;
+
+  # desktop module settings
+  desktop_module.bspwm = true;
+  desktop_module.awesomewm = true;
+  desktop_module.defaultSession = "none+bspwm";
 
   # nixos version
   system.stateVersion = "23.11";

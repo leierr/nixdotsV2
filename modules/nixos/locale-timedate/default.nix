@@ -18,4 +18,8 @@
     LC_TELEPHONE = "nb_NO.UTF-8";
     LC_TIME = "nb_NO.UTF-8";
   };
+
+  # xserver
+  services.xserver.layout = "no";
+  services.xserver.xkbVariant = "nodeadkeys";
 }
