@@ -2,13 +2,7 @@
   description = "Desktop Config";
 
   inputs = {
-    nixpkgs = {
-      url = "nixpkgs/nixos-23.11";
-      config = {
-        allowUnfree = true;
-        permittedInsecurePackages = [ "electron-25.9.0" ];
-      };
-    };
+    nixpkgs.url = "nixpkgs/nixos-23.11";
     nixpkgs-unstable.url = "nixpkgs/nixpkgs-unstable";
     home-manager = {
       url = "github:nix-community/home-manager/release-23.11";
