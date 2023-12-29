@@ -22,6 +22,11 @@ in
       default = null;
     };
 
+    displayManager = mkOption {
+      type = types.singleLineStr;
+      default = "";
+    };
+
   };
 
   config = {

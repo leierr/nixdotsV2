@@ -25,6 +25,7 @@
   desktop_module.bspwm = true;
   desktop_module.awesomewm = true;
   desktop_module.defaultSession = "none+bspwm";
+  desktop_module.displayManager = "gdm";
 
   # nixos version
   system.stateVersion = "23.11";
