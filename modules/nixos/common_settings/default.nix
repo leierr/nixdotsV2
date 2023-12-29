@@ -21,7 +21,7 @@
   nixpkgs.overlays = [
     (final: prev: {
       unstable = import nixpkgs-unstable {
-        system = config.system;
+        system = config.nixpkgs.localSystem;
         config = config.nixpkgs.config;
       };
     })
