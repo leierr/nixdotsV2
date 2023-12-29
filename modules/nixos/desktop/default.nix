@@ -18,7 +18,7 @@ in
     };
 
     defaultSession = mkOption {
-      default = null;
+      type = types.singleLineStr;
     };
 
     displayManager = mkOption {
@@ -38,7 +38,7 @@ in
       };
 
       displayManager = {
-        defaultSession = mkIf cfg.defaultSession cfg.defaultSession; # "none+bspwm"
+        defaultSession = mkIf (cfg.defaultSession != null) cfg.defaultSession; # "none+bspwm"
         gdm = mkIf (cfg.displayManager == "gdm") {
           enable = true;
           autoSuspend = false;
