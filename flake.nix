@@ -1,5 +1,5 @@
 {
-  description = "Desktop Config";
+  description = "";
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-23.11";
