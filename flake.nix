@@ -10,36 +10,36 @@
     };
   };
 
-  outputs = { self, nixpkgs, ... }@inputs:
-  let
-    system = "x86_64-linux";
-  in
-  {
+  outputs = inputs@{ self, nixpkgs, ... }: {
     nixosConfigurations = {
 
       desktop = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; inherit system; };
+        system = "x86_64-linux";
+        specialArgs = inputs;
         modules = [
           ./hosts/desktop/configuration.nix
         ];
       };
 
       laptop = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; inherit system; };
+        system = "x86_64-linux";
+        specialArgs = inputs;
         modules = [
           ./hosts/laptop/configuration.nix
         ];
       };
 
       workmachine = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; inherit system; };
+        system = "x86_64-linux";
+        specialArgs = inputs;
         modules = [
           ./hosts/workmachine/configuration.nix
         ];
       };
 
       testing_vm = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; inherit system; };
+        system = "x86_64-linux";
+        specialArgs = inputs;
         modules = [
           ./hosts/testing_vm/configuration.nix
         ];
