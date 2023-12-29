@@ -18,28 +18,28 @@
     nixosConfigurations = {
 
       desktop = nixpkgs.lib.nixosSystem {
-        specialArgs = inputs;
+        specialArgs = { inherit inputs; inherit system; };
         modules = [
           ./hosts/desktop/configuration.nix
         ];
       };
 
       laptop = nixpkgs.lib.nixosSystem {
-        specialArgs = inputs;
+        specialArgs = { inherit inputs; inherit system; };
         modules = [
           ./hosts/laptop/configuration.nix
         ];
       };
 
       workmachine = nixpkgs.lib.nixosSystem {
-        specialArgs = inputs;
+        specialArgs = { inherit inputs; inherit system; };
         modules = [
           ./hosts/workmachine/configuration.nix
         ];
       };
 
       testing_vm = nixpkgs.lib.nixosSystem {
-        specialArgs = inputs;
+        specialArgs = { inherit inputs; inherit system; };
         modules = [
           ./hosts/testing_vm/configuration.nix
         ];
