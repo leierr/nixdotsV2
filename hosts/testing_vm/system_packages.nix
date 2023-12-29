@@ -1,4 +1,4 @@
-{ pkgs, nixpkgs-unstable, ... }:
+{ pkgs, ... }:
 {
   # mlocate
   services.locate = {
@@ -23,7 +23,7 @@
     enableSSHSupport = false;
   };
 
-  environment.systemPackages = with pkgs; [bash-completion dig neofetch hello-unfree git] ++ (with nixpkgs-unstable.legacyPackages.${pkgs.system}; [
+  environment.systemPackages = with pkgs; [bash-completion dig neofetch hello-unfree git] ++ (with pkgs.unstable; [
     opentofu
     obsidian
   ]);

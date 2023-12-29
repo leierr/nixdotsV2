@@ -10,19 +10,12 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, ... }:
-  let
-    system = "x86_64-linux";
-    pkgs = nixpkgs {
-      inherit system;
-      config.allowUnfree = true;
-    };
-  in
-  {
+  outputs = inputs@{ self, nixpkgs, ... }: {
     nixosConfigurations = {
 
       desktop = nixpkgs.lib.nixosSystem {
         specialArgs = inputs;
+        system = "x86_64-linux";
         modules = [
           ./hosts/desktop/configuration.nix
         ];
@@ -30,6 +23,7 @@
 
       laptop = nixpkgs.lib.nixosSystem {
         specialArgs = inputs;
+        system = "x86_64-linux";
         modules = [
           ./hosts/laptop/configuration.nix
         ];
@@ -37,6 +31,7 @@
 
       workmachine = nixpkgs.lib.nixosSystem {
         specialArgs = inputs;
+        system = "x86_64-linux";
         modules = [
           ./hosts/workmachine/configuration.nix
         ];
@@ -44,6 +39,7 @@
 
       testing_vm = nixpkgs.lib.nixosSystem {
         specialArgs = inputs;
+        system = "x86_64-linux";
         modules = [
           ./hosts/testing_vm/configuration.nix
         ];

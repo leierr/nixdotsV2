@@ -11,7 +11,7 @@
     ../../modules/nixos/network
     ../../modules/nixos/pinentry
     ../../modules/nixos/sound
-    ../../modules/nixos/my_system_prefrences
+    ../../modules/nixos/common_settings
     ../../modules/nixos/virtualization
   ];
 

@@ -1,3 +1,4 @@
+{ nixpkgs-unstable, ... }:
 {
   # daemon that allows programs to request priority without going directly to the kernel
   security.rtkit.enable = true;
@@ -15,4 +16,14 @@
       #access-tokens = "";
     };
   };
+
+  # unstable packages as an overlay
+  nixpkgs.overlays = [
+    (final: prev: {
+      unstable = import nixpkgs-unstable {
+        inherit system;
+        config = nixpkgs.config;
+      };
+    })
+  ];
 }
