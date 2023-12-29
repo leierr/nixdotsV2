@@ -22,7 +22,7 @@
     (final: prev: {
       unstable = import nixpkgs-unstable {
         system = "${conf.system}";
-        config = nixpkgs.config;
+        config = ${nixpkgs.config};
       };
     })
   ];
