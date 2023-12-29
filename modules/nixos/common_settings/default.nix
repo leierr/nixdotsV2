@@ -17,6 +17,10 @@
     };
   };
 
+  nixpkgs.config = {
+    allowUnfree = true;
+  };
+
   # unstable packages as an overlay
   nixpkgs.overlays = [
     (final: prev: {
