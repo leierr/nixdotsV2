@@ -14,18 +14,16 @@
     ../../modules/nixos/virtualization
   ];
 
-  home-manager.nixosModules.home-manager {
-    home-manager = {
-      useUserPackages = true;
-      useGlobalPkgs = true;
-      users.${main_user_module.name} = {
-        home.stateVersion = "${system.stateVersion}";
-        imports = [
-          ../../modules/home-manager/alacritty
-        ];
-      };
+  home-manager = {
+    useUserPackages = true;
+    useGlobalPkgs = true;
+    users.${main_user_module.name} = {
+      home.stateVersion = "${system.stateVersion}";
+      imports = [
+        ../../modules/home-manager/alacritty
+      ];
     };
-  }
+  };
 
   # primary user settings
   main_user_module.secondaryGroups = [ "wheel" "docker" "networkmanager" "libvirtd" ];
