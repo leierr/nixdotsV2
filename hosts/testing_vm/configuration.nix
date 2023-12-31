@@ -1,4 +1,4 @@
-{ config, pkgs, lib, home-manager, ... }:
+{ config, pkgs, lib, inputs, ... }:
 {
   imports = [
     ./hardware-configuration.nix
@@ -14,7 +14,7 @@
     ../../modules/nixos/virtualization
   ];
 
-  home-manager = {
+  inputs.home-manager = {
     useUserPackages = true;
     useGlobalPkgs = true;
     users.${config.main_user_module.name} = {
