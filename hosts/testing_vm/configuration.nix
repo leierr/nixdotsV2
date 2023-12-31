@@ -1,4 +1,4 @@
-{ config, pkgs, lib, inputs, ... }: #home-manager, my_awesomewm_config,
+{ config, pkgs, lib, home-manager, ... }: #home-manager, my_awesomewm_config,
 {
   imports = [
     ./hardware-configuration.nix
