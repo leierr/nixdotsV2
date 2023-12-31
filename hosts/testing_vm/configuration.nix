@@ -1,4 +1,4 @@
-{ config, pkgs, lib, home-manager, my_awesomewm_config, ... }: #home-manager, my_awesomewm_config,
+{ config, pkgs, lib, home-manager, my_awesomewm_config, ... }:
 {
   imports = [
     ./hardware-configuration.nix
@@ -23,6 +23,7 @@
       home.stateVersion = "${config.system.stateVersion}";
       imports = [
         ../../modules/home-manager/alacritty
+        ../../modules/home-manager/awesomewm
       ];
     };
   };
