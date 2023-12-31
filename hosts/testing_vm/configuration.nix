@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ config, pkgs, lib, ... }:
 {
   imports = [
     ./hardware-configuration.nix
@@ -17,8 +17,8 @@
   home-manager = {
     useUserPackages = true;
     useGlobalPkgs = true;
-    users.${main_user_module.name} = {
-      home.stateVersion = "${system.stateVersion}";
+    users.${config.main_user_module.name} = {
+      home.stateVersion = "${config.system.stateVersion}";
       imports = [
         ../../modules/home-manager/alacritty
       ];
