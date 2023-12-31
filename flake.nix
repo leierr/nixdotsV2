@@ -7,7 +7,7 @@
     home-manager.url = "github:nix-community/home-manager/release-23.11";
   };
 
-  outputs = { self, nixpkgs, inputs, ... }: {
+  outputs = { self, nixpkgs, ... }@inputs: {
     nixosConfigurations = {
 
       desktop = nixpkgs.lib.nixosSystem {
