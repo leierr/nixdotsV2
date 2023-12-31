@@ -3,6 +3,7 @@
   imports = [
     ./hardware-configuration.nix
     ./system_packages.nix
+    home-manager.nixosModules.default
     ../../modules/nixos/main_user
     ../../modules/nixos/sudoers
     ../../modules/nixos/fonts
@@ -14,7 +15,7 @@
     ../../modules/nixos/virtualization
   ];
 
-  home-manager.nixosModules.home-manager = {
+  home-manager = {
     useUserPackages = true;
     useGlobalPkgs = true;
     users.${config.main_user_module.name} = {
