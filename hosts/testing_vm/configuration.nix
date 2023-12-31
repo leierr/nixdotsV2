@@ -1,4 +1,4 @@
-{ config, pkgs, lib, home-manager, ... }: #home-manager, my_awesomewm_config,
+{ config, pkgs, lib, home-manager, my_awesomewm_config, ... }: #home-manager, my_awesomewm_config,
 {
   imports = [
     ./hardware-configuration.nix
@@ -18,7 +18,7 @@
   home-manager = {
     useUserPackages = true;
     useGlobalPkgs = true;
-    home-manager.extraSpecialArgs = my_awesomewm_config;
+    extraSpecialArgs = my_awesomewm_config;
     users.${config.main_user_module.name} = {
       home.stateVersion = "${config.system.stateVersion}";
       imports = [
