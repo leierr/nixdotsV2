@@ -45,6 +45,6 @@ in
         };
         lightdm.enable = false;
       };
+    };
   };
-}
 }
