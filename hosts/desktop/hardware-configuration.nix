@@ -30,4 +30,29 @@
       rocm-opencl-runtime
     ];
   };
+
+  services.xserver.xrandrHeads = [
+    {
+      output = "DisplayPort-0";
+      primary = true;
+      monitorConfig = ''
+        Option "Position" "2560 0"
+        Option "Enable" "true"
+        Option "Rotate" "normal"
+        Option "PreferredMode" "2560x1440_144"
+      '';
+    }
+    {
+      output = "DisplayPort-1";
+      monitorConfig = ''
+        Option "Position" "0 0"
+        Option "Enable" "true"
+        Option "Rotate" "normal"
+        Option "PreferredMode" "2560x1440_144"
+      '';
+    }
+  ];
+
+  services.xserver.videoDrivers = [ "amdgpu" ];
+  services.xserver.libinput.enable = true;
 }
