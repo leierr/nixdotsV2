@@ -12,6 +12,7 @@
     ../../modules/nixos/pinentry
     ../../modules/nixos/sound
     ../../modules/nixos/common_settings
+    ../../modules/nixos/desktop
     ../../modules/nixos/virtualization
   ];
 
