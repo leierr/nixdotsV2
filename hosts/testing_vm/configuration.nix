@@ -19,7 +19,7 @@
     useUserPackages = true;
     useGlobalPkgs = true;
     users.${config.main_user_module.name} = {
-      inherit my_awesomewm_config;
+      #inherit my_awesomewm_config;
       home.stateVersion = "${config.system.stateVersion}";
       imports = [
         ../../modules/home-manager/alacritty
