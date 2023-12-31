@@ -1,4 +1,4 @@
-{ config, inputs, ... }:
+{ config, nixpkgs-unstable, ... }:
 {
   # daemon that allows programs to request priority without going directly to the kernel
   security.rtkit.enable = true;
@@ -25,7 +25,7 @@
   # unstable packages as an overlay
   nixpkgs.overlays = [
     (final: prev: {
-      unstable = import inputs.nixpkgs-unstable {
+      unstable = import nixpkgs-unstable {
         system = config.nixpkgs.system;
         config = config.nixpkgs.config;
       };
