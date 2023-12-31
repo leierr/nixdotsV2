@@ -5,6 +5,10 @@
     nixpkgs.url = "nixpkgs/nixos-23.11";
     nixpkgs-unstable.url = "nixpkgs/nixpkgs-unstable";
     home-manager.url = "github:nix-community/home-manager/release-23.11";
+    my_awesomewm_config = {
+      url = "github:leierr/awesome";
+      flake = false;
+    };
   };
 
   outputs = inputs@{ self, nixpkgs, ... }: {
