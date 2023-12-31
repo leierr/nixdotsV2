@@ -18,7 +18,7 @@
   home-manager = {
     useUserPackages = true;
     useGlobalPkgs = true;
-    extraSpecialArgs = my_awesomewm_config;
+    extraSpecialArgs = { inherit my_awesomewm_config; };
     users.${config.main_user_module.name} = {
       home.stateVersion = "${config.system.stateVersion}";
       imports = [
